@@ -1,0 +1,10 @@
+<div *ngFor="let pro of products">
+  <h3>
+    <a [title]="pro.name + 'detail'" [routerLink]="['/products', pro.id]">{{
+      pro.name
+    }}</a>
+  </h3>
+  <p *ngIf="pro.description">Description: {{ pro.description }}</p>
+  <button type="button" (click)="share()">Share</button>
+  <app-product-alert [product]="pro" (notify)="onNotify()"></app-product-alert>
+</div>
